@@ -1,0 +1,16 @@
+server:
+  port: 9000
+  ssl:
+    enabled: true
+    key-store: classpath:auth-keystore.p12
+    key-store-password: auth@123
+    key-store-type: PKCS12
+    key-alias: auth
+spring:
+  security:
+    oauth2:
+      authorization-server:
+        issuer-uri: https://localhost:9000
+  cloud:
+    vault:
+      enabled: false

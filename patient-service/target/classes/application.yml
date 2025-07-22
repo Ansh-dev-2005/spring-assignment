@@ -1,0 +1,17 @@
+server:
+  port: 8081
+  ssl:
+    enabled: true
+    key-store: classpath:patient-keystore.p12
+    key-store-password: patient@123
+    key-store-type: PKCS12
+    key-alias: patient
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://localhost:9000
+  cloud:
+    vault:
+      enabled: false

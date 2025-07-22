@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - auth-server
+      - appointment-service
+      - patient-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+  auth-server:
+    build: ./auth-server
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+  appointment-service:
+    build: ./appointment-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+  patient-service:
+    build: ./patient-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod

@@ -1,0 +1,17 @@
+server:
+  port: 8082
+  ssl:
+    enabled: true
+    key-store: classpath:appointment-keystore.p12
+    key-store-password: appointment@123
+    key-store-type: PKCS12
+    key-alias: appointment
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://localhost:9000
+  cloud:
+    vault:
+      enabled: false

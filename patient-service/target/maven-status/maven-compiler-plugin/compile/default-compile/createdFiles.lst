@@ -1,0 +1,3 @@
+com\healthcare\patient\PatientServiceApplication.class
+com\healthcare\patient\config\SecurityConfig.class
+com\healthcare\patient\controller\PatientController.class
